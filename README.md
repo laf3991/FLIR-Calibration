@@ -30,3 +30,5 @@ Once done the coeff.csv will be saved in the same folder.
 This will use the coeff.csv to convert dc images to radiance.
 This requires a path to the folder with the dc images.
 It will save the radiance images in a new folder with the dc images. 
+## Note 
+May be some bugs in saving the radiance files if the same images are ran over and over...
