@@ -113,4 +113,3 @@ with open('coeff.csv', 'w', newline='') as csvfile:
 
         file.writerow((m[i],b[i]))
     
-file.close()

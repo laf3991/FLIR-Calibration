@@ -45,6 +45,6 @@ for i in range(len(filenames)):
     rad_image = (image - np.array(b).reshape((dims[0],dims[1])))/np.array(m).reshape(((dims[0],dims[1])))
     im_name = os.path.basename(filenames[i])
     filename = os.path.join(output,"Radiance_"+im_name)
-    cv2.imwrite(filename,rad_image) 
+    cv2.imwrite(filename,rad_image.astype(np.float32)) 
 
 
