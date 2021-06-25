@@ -1,7 +1,7 @@
 # FLIR-Calibration
 ## FLIR ResearchIR
 Temperature range for calibration using blackbody controller: 10 - 50 [C] in steps of 5 [C]. 
-Using the FLIR software record for 3 min  movie at each temperature. 
+Using the FLIR software record for 3 min  movie (5fps) at each temperature. 
 Save .ats files in calibration folder.
 Export .ats as multiple images 32 float.tif for each temperature.
 ### Example file structure
