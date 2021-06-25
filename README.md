@@ -2,8 +2,8 @@
 ## FLIR ResearchIR
 10 - 50 [C] in steps of 5 [C]
 Using the FLIR software record for 3 min at each temperature. 
-Save .ats files in new folder
-Export .ats as multiple images 32 float.tif for each temperature
+Save .ats files in new folder.
+Export .ats as multiple images 32 float.tif for each temperature.
 ### Example file structure
 ```
 -calibration/
@@ -17,7 +17,7 @@ Export .ats as multiple images 32 float.tif for each temperature
     -file01.tif
     -file02.tif
 ```
-cal_processing looks specifically for folders named after the temperatures for the images.tif
+cal_processing looks specifically for folders named after the temperatures for the images.tif.
 
 ## cal_processing.py
 This script will generate a csv of the calibration coefficients for each pixel using the calibration images. 
