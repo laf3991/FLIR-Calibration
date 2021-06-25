@@ -2,7 +2,7 @@
 """
 Created on Mon Jun 21 11:39:27 2021
 
-@author: Lucy
+@author: Lucy Falcon
 """
 import numpy as np 
 import cv2
@@ -41,7 +41,7 @@ temps = np.arange(int(val),int(val1) +int(val2),int(val2))
 
 mean_images = []
 tot_rad = []
-std = []
+#std = []
 val = input("Enter path to calibration images dir: ")
 
 isDir = os.path.isdir(val) 
@@ -69,9 +69,9 @@ for t in range(len(temps)):
         all_images.append(im)
         
     mean_image = np.mean(np.array(all_images),axis = 0)
-    STD = np.std(np.array(all_images),axis = 0)
+    #STD = np.std(np.array(all_images),axis = 0)
     # print(mean_image.shape)
-    std.append(STD)
+    #std.append(STD)
     flat = mean_image.flatten()
     mean_images.append(flat)
     # print(flat.shape)
