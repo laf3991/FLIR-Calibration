@@ -57,7 +57,7 @@ while isDir == False:
 # print(val)
 
 
-#probs need to do error checking 
+
 for t in range(len(temps)):
     folders = glob.glob(val+"\*")       
     filenames =  glob.glob(folders[t]+"\*.tif")
@@ -92,10 +92,7 @@ for t in range(len(temps)):
 #should have 4 flattened mean images 
 m = []
 b = []
-# path = r"C:\Users\lucyf\Desktop\cal2123\Test\hand.tif"
-# real_image = cv2.imread(path,-1)
-# im = real_image.flatten()
-# rad_image = []
+
 for i in range(len(mean_images[0])):
     
     pix_array = np.array((mean_images[0][i],mean_images[1][i],mean_images[2][i],mean_images[3][i]))
