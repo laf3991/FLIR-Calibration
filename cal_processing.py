@@ -2,7 +2,7 @@
 """
 Created on Mon Jun 21 11:39:27 2021
 
-@author: Lucy Falcon
+@author: Lucy
 """
 import numpy as np 
 import cv2
@@ -12,7 +12,7 @@ import csv
 import os 
 
 #Flir Calibration 
-
+#currently set up for 9 points 
 def bb(wave,temp):
     #returns radiance
     h = 6.626 * 10**(-34)
@@ -41,7 +41,7 @@ temps = np.arange(int(val),int(val1) +int(val2),int(val2))
 
 mean_images = []
 tot_rad = []
-#std = []
+std = []
 val = input("Enter path to calibration images dir: ")
 
 isDir = os.path.isdir(val) 
@@ -58,6 +58,9 @@ while isDir == False:
 
 
 
+
+
+#probs need to do error checking 
 for t in range(len(temps)):
     folders = glob.glob(val+"\*")       
     filenames =  glob.glob(folders[t]+"\*.tif")
@@ -69,9 +72,9 @@ for t in range(len(temps)):
         all_images.append(im)
         
     mean_image = np.mean(np.array(all_images),axis = 0)
-    #STD = np.std(np.array(all_images),axis = 0)
+    # STD = np.std(np.array(all_images),axis = 0)
     # print(mean_image.shape)
-    #std.append(STD)
+    # std.append(STD)
     flat = mean_image.flatten()
     mean_images.append(flat)
     # print(flat.shape)
@@ -92,10 +95,13 @@ for t in range(len(temps)):
 #should have 4 flattened mean images 
 m = []
 b = []
-
+# path = r"C:\Users\lucyf\Desktop\cal2123\Test\hand.tif"
+# real_image = cv2.imread(path,-1)
+# im = real_image.flatten()
+# rad_image = []
 for i in range(len(mean_images[0])):
     
-    pix_array = np.array((mean_images[0][i],mean_images[1][i],mean_images[2][i],mean_images[3][i]))
+    pix_array = np.array((mean_images[0][i],mean_images[1][i],mean_images[2][i],mean_images[3][i],mean_images[4][i],mean_images[5][i],mean_images[6][i],mean_images[7][i],mean_images[8][i]))
     
     fit = np.polyfit(tot_rad,pix_array,1)
 
@@ -109,4 +115,10 @@ with open('coeff.csv', 'w', newline='') as csvfile:
 
 
         file.writerow((m[i],b[i]))
+  
     
+  
+    
+  
+    
+
